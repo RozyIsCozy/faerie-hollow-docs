@@ -1,0 +1,3813 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Every setting in faeriehollow-server&#x2f;realm.toml: the portal, spawns, the realm&#x27;s doings, tea parties, mushrooms, plants and snow.">
+      
+      
+        <meta name="author" content="CozyRozy">
+      
+      
+        <link rel="canonical" href="https://rozyiscozy.github.io/faerie-hollow-docs/configuration/realm/">
+      
+      
+      
+        <link rel="prev" href="../creatures/">
+      
+      
+        <link rel="next" href="../world/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>The Faerie Realm - Faerie Hollow Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/faerie.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Faerie Hollow Docs" class="md-header__button md-logo" aria-label="Faerie Hollow Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Faerie Hollow Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Faerie Realm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../datapacks/" class="md-tabs__link">
+          
+  
+  Datapacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resource-packs/" class="md-tabs__link">
+          
+  
+  Resource packs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../compatibility/" class="md-tabs__link">
+          
+  
+  Compatibility
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../help/hiding/" class="md-tabs__link">
+          
+  
+  Help
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Faerie Hollow Docs" class="md-nav__button md-logo" aria-label="Faerie Hollow Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+
+    </a>
+    Faerie Hollow Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Getting started
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Servers and multiplayer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/updating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updating and moving worlds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Configuration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Server settings: the front page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../familiars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Familiars
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creatures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Faerie Realm
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Faerie Realm
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#realm-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[portal]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-spawns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[spawns]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-whispurrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.whispurrs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblincamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinCamps]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblinpatrols" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinPatrols]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblinbombers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinBombers]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-brewfoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.brewFoes]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-satyrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.satyrs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-serpents" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.serpents]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-reapers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.reapers]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-nightghosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.nightGhosts]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-koboldrefill" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.koboldRefill]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-wildcreatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.wildCreatures]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[spawns.wildCreatures]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-wildcreatures-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.wildCreatures.weights]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[events]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-fairenights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.faireNights]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-fallenbell" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.fallenBell]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-wishingwells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.wishingWells]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-shrines" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.shrines]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-bathhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.bathhouse]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-giantswake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.giantsWake]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-teaparties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[teaParties]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-mushrooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[mushrooms]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.glow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-spreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.spreading]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-dreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.dreams]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-plants" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[plants]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-berrybushes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.berryBushes]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-rockcandy" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.rockCandy]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-wishingpuffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.wishingPuffs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-snow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[snow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World generation and loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Items and blocks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Client settings and keys
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ready-made setups
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gamerules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../datapacks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Datapacks
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Datapacks
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tag reference
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/familiars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Custom familiars
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/brewing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cauldron brews
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/loot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/worldgen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resource-packs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Resource packs
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Resource packs
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-packs/sounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds and music
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-packs/text/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Speech bubbles and translations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../compatibility/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Compatibility
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Compatibility
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatibility/languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Languages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Help
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Help
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/hiding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hiding and turning things off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Troubleshooting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/quirks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Known quirks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#realm-portal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[portal]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-spawns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[spawns]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-whispurrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.whispurrs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblincamps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinCamps]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblinpatrols" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinPatrols]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-goblinbombers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.goblinBombers]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-brewfoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.brewFoes]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-satyrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.satyrs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-serpents" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.serpents]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-reapers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.reapers]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-nightghosts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.nightGhosts]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-koboldrefill" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.koboldRefill]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-wildcreatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.wildCreatures]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[spawns.wildCreatures]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-spawns-wildcreatures-weights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[spawns.wildCreatures.weights]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[events]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-fairenights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.faireNights]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-fallenbell" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.fallenBell]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-wishingwells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.wishingWells]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-shrines" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.shrines]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-bathhouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.bathhouse]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-events-giantswake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[events.giantsWake]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-teaparties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[teaParties]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-mushrooms" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[mushrooms]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-glow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.glow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-spreading" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.spreading]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-mushrooms-dreams" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[mushrooms.dreams]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-plants" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[plants]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-berrybushes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.berryBushes]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-rockcandy" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.rockCandy]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realm-plants-wishingpuffs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[plants.wishingPuffs]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#realm-snow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[snow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="faerie-realm-settings">Faerie Realm settings<a class="headerlink" href="#faerie-realm-settings" title="Permanent link">&para;</a></h1>
+<p>Every setting in <code>faeriehollow-server/realm.toml</code>, in the order it appears in the file. The front page
+(<a href="../server/"><code>faeriehollow-server.toml</code></a>) switches the portal, every hostile spawn and the mushrooms' ward on or off,
+and scales every spawn's chance.</p>
+<div class="admonition tip">
+<p class="admonition-title">Every spawn reads alike</p>
+<p>Everything the realm brings near its players starts the same way: <code>enabled</code> and <code>intervalTicks</code> (how often it has
+a chance near each player), then its chances (percent, each time) and caps (the most near a player at once).</p>
+</div>
+<h2 id="realm-portal"><code>[portal]</code><a class="headerlink" href="#realm-portal" title="Permanent link">&para;</a></h2>
+<p>The Faerie Portal, the way into the realm and back: a Witch's Willow's hollow (switched on or off on the front page).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-portal-playerdelayticks"></a><code>player<wbr>Delay<wbr>Ticks</code></td>
+<td><code>30</code> <small>(1.5 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks a player must stand in an open portal to be taken through (20 = 1 second). Players in creative, and any other creature or thing, go at once.</td>
+</tr>
+<tr>
+<td><a id="realm-portal-searchradius"></a><code>search<wbr>Radius</code></td>
+<td><code>64</code></td>
+<td><code>24</code> to <code>128</code></td>
+<td>How far, in blocks each way across, an open portal is looked for where a traveler comes through, before a willow is grown for them with one. A larger search loads more of the world on each trip.</td>
+</tr>
+<tr>
+<td><a id="realm-portal-nonplayerstravel"></a><code>non<wbr>Players<wbr>Travel</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether creatures, dropped items and other things that are not players are taken through an open portal. false: only players travel.</td>
+</tr>
+<tr>
+<td><a id="realm-portal-fromdimensions"></a><code>from<wbr>Dimensions</code></td>
+<td><code>[]</code></td>
+<td>a list</td>
+<td>The dimensions a portal may be opened in and lead to the realm from, each its id, e.g. "minecraft:overworld". Empty: any. A portal in the realm always leads home to the overworld, whatever this holds.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-spawns"><code>[spawns]</code><a class="headerlink" href="#realm-spawns" title="Permanent link">&para;</a></h2>
+<p>What the realm brings near its players. Peaceful, and the doMobSpawning gamerule set to false, stop the foes.</p>
+<h3 id="realm-spawns-whispurrs"><code>[spawns.whispurrs]</code><a class="headerlink" href="#realm-spawns-whispurrs" title="Permanent link">&para;</a></h3>
+<p>Wild Whispurrs coming, by night, near players in the realm.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-whispurrs-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances, by night, for a wild Whispurr to come near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-ruinschance"></a><code>ruins<wbr>Chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent) one comes, each time, for a player at the ruins over a minotaur labyrinth or at Giant's Wake (the structures tagged #faeriehollow:whispurr_haunts/ruins).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-villagechance"></a><code>village<wbr>Chance</code></td>
+<td><code>5</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance for a player at or near one of the realm's villages (#faeriehollow:whispurr_haunts/villages).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-landschance"></a><code>lands<wbr>Chance</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance for a player in one of the lands Whispurrs come to (the biomes tagged #faeriehollow:whispurr_haunts/lands: the Eternal Autumn Wood, the Giant's Garden and the Giant's Rest).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-cap"></a><code>cap</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>64</code></td>
+<td>No wild Whispurr comes while this many wild ones no one has won over are already within capRadius of the player.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-capradius"></a><code>cap<wbr>Radius</code></td>
+<td><code>64.0</code></td>
+<td><code>1.0</code> to <code>256.0</code></td>
+<td>How near the player (blocks) wild Whispurrs count towards the cap.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-nightonly"></a><code>night<wbr>Only</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Wild Whispurrs come only by night. false: by day too.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-distancemin"></a><code>distance<wbr>Min</code></td>
+<td><code>16</code></td>
+<td><code>1</code> to <code>128</code></td>
+<td>How far from the player (blocks across) one appears, at the least and at the most.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-distancemax"></a><code>distance<wbr>Max</code></td>
+<td><code>40</code></td>
+<td><code>1</code> to <code>128</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-whispurrs-villagereach"></a><code>village<wbr>Reach</code></td>
+<td><code>24</code></td>
+<td><code>0</code> to <code>256</code></td>
+<td>How near (blocks) the pieces of one of the realm's villages a spot must be to count as at the village.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-goblincamps"><code>[spawns.goblinCamps]</code><a class="headerlink" href="#realm-spawns-goblincamps" title="Permanent link">&para;</a></h3>
+<p>The goblins who live at the goblin camps, in the outskirts of the minotaur ruins and up in the Moonspire Peaks: a chief and its followers, who have moved in before a player first comes near, and stay. Never at a camp near a faerie hamlet, an elven village or the Wandering Rings, or one a pastel mushroom wards.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-goblincamps-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether goblins live at the camps (hostileSpawns on the front page, or its spawnRatePercent at 0, switches them off too). Goblins already living at one stay.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblincamps-followersmin"></a><code>followers<wbr>Min</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>12</code></td>
+<td>How many goblins follow each camp's chief: between these.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblincamps-followersmax"></a><code>followers<wbr>Max</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>12</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblincamps-refillticks"></a><code>refill<wbr>Ticks</code></td>
+<td><code>24000</code> <small>(20 min)</small></td>
+<td><code>0</code> to <code>720000</code></td>
+<td>Ticks after a camp's goblins are all gone (slain, or led far away) before a new pack moves in, while no player is near it (24000 = a day). 0: a camp, once cleared, stays empty.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-goblinpatrols"><code>[spawns.goblinPatrols]</code><a class="headerlink" href="#realm-spawns-goblinpatrols" title="Permanent link">&para;</a></h3>
+<p>The goblins' roaming patrols: a chief and its followers who set out by day across the realm, near a player there, and hunt players as pillagers' patrols do. Never near a faerie hamlet, an elven village, the Wandering Rings or a pastel mushroom.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>12000</code> <small>(10 min)</small></td>
+<td><code>1</code> to <code>720000</code></td>
+<td>The least ticks between the realm's chances for a patrol to set out (up to a minute more, at random).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-chance"></a><code>chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a patrol sets out near a player in the realm.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-firstday"></a><code>first<wbr>Day</code></td>
+<td><code>0</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>The first day of the world (0 the first) on which a patrol may set out.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-goblinsmax"></a><code>goblins<wbr>Max</code></td>
+<td><code>4</code></td>
+<td><code>1</code> to <code>8</code></td>
+<td>The most goblins in a patrol, its chief with them (otherwise as many as the place's difficulty, and one more).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinpatrols-satyrhirechance"></a><code>satyr<wbr>Hire<wbr>Chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent) that a patrol setting out has hired a Satyr Piper to pipe for it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-goblinbombers"><code>[spawns.goblinBombers]</code><a class="headerlink" href="#realm-spawns-goblinbombers" title="Permanent link">&para;</a></h3>
+<p>The goblin bombers that come alone by night near players in the realm, as creepers do in the overworld. Never near a faerie hamlet, an elven village, the Wandering Rings or a pastel mushroom.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-goblinbombers-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinbombers-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances, by night, for a bomber to come near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinbombers-chance"></a><code>chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that one comes near a player.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-goblinbombers-cap"></a><code>cap</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>No bomber comes near a player while this many goblin bombers are already within 64 blocks of them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-brewfoes"><code>[spawns.brewFoes]</code><a class="headerlink" href="#realm-spawns-brewfoes" title="Permanent link">&para;</a></h3>
+<p>The brew foes: Mandrakes buried in the open country's meadows and Puffcaps in the Glowcap Knolls and their grottos, set down near players, never near a faerie hamlet, an elven village or the Wandering Rings.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-brewfoes-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances to set brew foes down near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-mandrakechance"></a><code>mandrake<wbr>Chance</code></td>
+<td><code>40</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a few Mandrakes come up near a player in one of their meadows.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-puffcapchance"></a><code>puffcap<wbr>Chance</code></td>
+<td><code>50</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a few Puffcaps come up near a player in the Glowcap Knolls.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-grottochance"></a><code>grotto<wbr>Chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a Puffcap or two come up in a Glowcap Grotto near a player.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-mandrakecap"></a><code>mandrake<wbr>Cap</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>32</code></td>
+<td>No more Mandrakes come up near a player while this many are within 48 blocks of them.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-puffcapcap"></a><code>puffcap<wbr>Cap</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>32</code></td>
+<td>No more Puffcaps come up near a player while this many are within 48 blocks of them.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-brewfoes-grottocap"></a><code>grotto<wbr>Cap</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>No more Puffcaps come up in a grotto while this many are in it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-satyrs"><code>[spawns.satyrs]</code><a class="headerlink" href="#realm-spawns-satyrs" title="Permanent link">&para;</a></h3>
+<p>The Satyr Pipers' own doings: a herder in the meadows, a goatherd on the peaks, the revels round the faerie rings of the Maying Downs by night, and those who linger by the giants' teacups. Each a chance near each player there.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-satyrs-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-satyrs-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances for each of a satyr's doings near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-satyrs-herdchance"></a><code>herd<wbr>Chance</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a satyr comes to lead the Hexwool or Blue Moon Hens near a player in the Pom Meadow or the Maying Downs.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-satyrs-goatherdchance"></a><code>goatherd<wbr>Chance</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a satyr comes to herd the Blackhorn Goats near a player in the Moonspire Peaks.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-satyrs-revelchance"></a><code>revel<wbr>Chance</code></td>
+<td><code>15</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, by night, that satyrs come to dance round a faerie ring near a player on the Maying Downs (once a night each ring).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-satyrs-musicianchance"></a><code>musician<wbr>Chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that a satyr comes to linger by a giant's teacup near a player.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-serpents"><code>[spawns.serpents]</code><a class="headerlink" href="#realm-spawns-serpents" title="Permanent link">&para;</a></h3>
+<p>The feathered serpents: their rising by night in the realm's deep river water near players. Each slips away again at dawn, unless it is after someone (or named).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-serpents-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-serpents-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances, by night, for a serpent to rise near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-serpents-chance"></a><code>chance</code></td>
+<td><code>30</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that one rises near a player who is near the river's deep water.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-serpents-cap"></a><code>cap</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>No serpent rises near a player while this many risen ones are already within 64 blocks of them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-reapers"><code>[spawns.reapers]</code><a class="headerlink" href="#realm-spawns-reapers" title="Permanent link">&para;</a></h3>
+<p>The night reapers: their coming by night near players in the realm. Each fades away again at dawn (unless named, or brought by a spawn egg or a command).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-reapers-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-reapers-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>400</code> <small>(20 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances, by night, for a reaper to come near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-reapers-chance"></a><code>chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that one comes near a player.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-reapers-cap"></a><code>cap</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>No reaper comes near a player while this many the night brought are already within 64 blocks of them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-nightghosts"><code>[spawns.nightGhosts]</code><a class="headerlink" href="#realm-spawns-nightghosts" title="Permanent link">&para;</a></h3>
+<p>The Bedsheet Ghosts (bewitched allays) that come by night to the realm's ruins near players. Each slips away again by day unless someone has won it over (given it something to carry, named it or made it a familiar). They come on Peaceful too, as they are no foes; the doMobSpawning gamerule set to false stops them.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-nightghosts-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's chances, by night, for a ghost to come near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-chance"></a><code>chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each time, that one comes, if the spot picked near the player lies in a ruin.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-cap"></a><code>cap</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>No ghost comes near a player while this many the night brought are already within capRadius of them.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-capradius"></a><code>cap<wbr>Radius</code></td>
+<td><code>64</code></td>
+<td><code>8</code> to <code>128</code></td>
+<td>How far from a player the ghosts already there are counted, for the cap, in blocks.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-distancemin"></a><code>distance<wbr>Min</code></td>
+<td><code>16</code></td>
+<td><code>0</code> to <code>128</code></td>
+<td>How far from the player the spot a ghost may come at is picked, in blocks: between these.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-nightghosts-distancemax"></a><code>distance<wbr>Max</code></td>
+<td><code>40</code></td>
+<td><code>0</code> to <code>128</code></td>
+<td>See the setting above.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-koboldrefill"><code>[spawns.koboldRefill]</code><a class="headerlink" href="#realm-spawns-koboldrefill" title="Permanent link">&para;</a></h3>
+<p>The kobolds' mines and burrows filling again: a working near a player, out of their sight, gets back, now and then, one of the kobolds it was made with that has gone (never more than it was made with). Kobolds are foes: hostileSpawns on the front page stops it, as does the doMobSpawning gamerule set to false.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-koboldrefill-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this spawner runs (hostileSpawns on the front page switches every hostile one off at once).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-koboldrefill-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks between the realm's looks at the workings near each player there.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-koboldrefill-chance"></a><code>chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each look, that a working missing a kobold gets one back.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-spawns-wildcreatures"><code>[spawns.wildCreatures]</code><a class="headerlink" href="#realm-spawns-wildcreatures" title="Permanent link">&para;</a></h3>
+<p>Whether each of the realm's wild creatures comes forth there of itself, as animals do (and with new land), and how often (weights, below). In which biomes is datapack data (the mod's spawns_* biome tags), not a setting. Those already in the world stay.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-wildcreatures-faeries"></a><code>faeries</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Wild faeries.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-unicorns"></a><code>unicorns</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Unicorns.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-deer"></a><code>deer</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>The realm's deer: the Great Elk, the White Hart, the Bloom Stag and the Moonspire Reindeer.</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-bewitchedanimals"></a><code>bewitched<wbr>Animals</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>The realm's bewitched wildlife: the bewitched forms of vanilla's animals that come forth there (toadstool calves, jackalopes, Hexwool sheep, Horned Owls, dire wolves and the rest). Vanilla's animals elsewhere are not touched.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="realm-spawns-wildcreatures-weights"><code>[spawns.wildCreatures.weights]</code><a class="headerlink" href="#realm-spawns-wildcreatures-weights" title="Permanent link">&para;</a></h4>
+<p>How often each of the realm's animals and faeries comes into the lands it lives in, as it is made and as it is played in: each a weight beside the other creatures there, as vanilla's biomes weigh their spawns. Read as the world opens: a change takes effect the next time it does (the switches above take effect at once).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-blackhorngoats"></a><code>blackhorn<wbr>Goats</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Blackhorn Goats come into the Moonspire Peaks, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-bloomstags"></a><code>bloom<wbr>Stags</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Bloom Stags come into the Moonbloom Meadow, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-bluemoonhens"></a><code>blue<wbr>Moon<wbr>Hens</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Blue Moon Hens come into the Pom Meadow and the Maying Downs, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-direwolves"></a><code>dire<wbr>Wolves</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Dire Wolves come into the Dusk Wood, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-faeries"></a><code>faeries</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Faeries come into most of the realm's lands, beside its other flitting creatures, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-greatelk"></a><code>great<wbr>Elk</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Great Elk come into the Hollowoak Wood, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-grimalkins"></a><code>grimalkins</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Grimalkins come into the Moonlit Wood, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-hedgefox"></a><code>hedgefox</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Hedgefoxes come into the Eternal Autumn Wood and the Moonspire Peaks, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-hexnewts"></a><code>hex<wbr>Newts</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Hex Newts come into the Faerie River's water and the Tresswillow Shallows, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-hexwool"></a><code>hexwool</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Hexwool come into the Pom Meadow and the Maying Downs, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-hornedowls"></a><code>horned<wbr>Owls</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Horned Owls come into the Moonlit and Hollowoak Woods, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-jackalopes"></a><code>jackalopes</code></td>
+<td><code>12</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Jackalopes come into the Eternal Autumn Wood, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-mooncalves"></a><code>mooncalves</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Mooncalves come into the Pom Meadow and the Maying Downs, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-moonspirereindeer"></a><code>moonspire<wbr>Reindeer</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Moonspire Reindeer come into the Moonspire Peaks, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-mossbacks"></a><code>mossbacks</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Mossbacks come into the Faerie River's shores and the lagoons, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-toadstoolcalves"></a><code>toadstool<wbr>Calves</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Toadstool Calves come into the Glowcap Knolls, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-trufflehogs"></a><code>truffle<wbr>Hogs</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Truffle Hogs come into the faerie woods, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-unicorns"></a><code>unicorns</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Unicorns come into the Eternal Autumn and Moonlit Woods, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-vampirebats"></a><code>vampire<wbr>Bats</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Vampire Bats come into the Dusk Wood by night, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-whiteharts"></a><code>white<wbr>Harts</code></td>
+<td><code>10</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often White Harts come into the Moonlit Wood, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+<tr>
+<td><a id="realm-spawns-wildcreatures-weights-witchstoads"></a><code>witchs<wbr>Toads</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>How often Witch's Toads come into the Faerie River's shores and the Tresswillow Shallows, as a weight beside the other creatures there. 0: none come on their own (those already about stay).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-events"><code>[events]</code><a class="headerlink" href="#realm-events" title="Permanent link">&para;</a></h2>
+<p>The realm's doings: its full-moon faires, its fallen bells, wishing wells and bathhouses.</p>
+<h3 id="realm-events-fairenights"><code>[events.faireNights]</code><a class="headerlink" href="#realm-events-fairenights" title="Permanent link">&para;</a></h3>
+<p>The Faerie Faire's full-moon nights: elf merchants come to keep its stalls and faeries to dance round its maypole, once a night, while a player is near. The doMobSpawning gamerule set to false stops them.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-fairenights-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether the faires come alive on full-moon nights. Visitors already come still leave at dawn.</td>
+</tr>
+<tr>
+<td><a id="realm-events-fairenights-merchants"></a><code>merchants</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How many elf merchants come to keep a faire's stalls (never more than it has stalls).</td>
+</tr>
+<tr>
+<td><a id="realm-events-fairenights-dancers"></a><code>dancers</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How many faeries come to dance round its maypole.</td>
+</tr>
+<tr>
+<td><a id="realm-events-fairenights-triggerradius"></a><code>trigger<wbr>Radius</code></td>
+<td><code>96</code></td>
+<td><code>16</code> to <code>256</code></td>
+<td>How near a faire a player must be, in blocks, for its night to come about.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-events-fallenbell"><code>[events.fallenBell]</code><a class="headerlink" href="#realm-events-fallenbell" title="Permanent link">&para;</a></h3>
+<p>The fallen bell: tapped with an empty hand, it rings, and calls the wild faeries near to it a while.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-fallenbell-callradius"></a><code>call<wbr>Radius</code></td>
+<td><code>64</code></td>
+<td><code>0</code> to <code>128</code></td>
+<td>How far its ring carries to the faeries, in blocks. 0: it calls none.</td>
+</tr>
+<tr>
+<td><a id="realm-events-fallenbell-stayticks"></a><code>stay<wbr>Ticks</code></td>
+<td><code>2400</code> <small>(2 min)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>How long the faeries it calls keep about it, in ticks (20 = 1 second). A change applies to faeries called from then on.</td>
+</tr>
+<tr>
+<td><a id="realm-events-fallenbell-cooldownticks"></a><code>cooldown<wbr>Ticks</code></td>
+<td><code>60</code> <small>(3 s)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks after it rings before it rings again.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-events-wishingwells"><code>[events.wishingWells]</code><a class="headerlink" href="#realm-events-wishingwells" title="Permanent link">&para;</a></h3>
+<p>The wishing wells: an item tossed into one is taken for a wish, and a small gift tossed back (its gifts are the loot table faeriehollow:gameplay/wishing_well, which datapacks can change).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-wishingwells-wishesperday"></a><code>wishes<wbr>Per<wbr>Day</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>64</code></td>
+<td>How many wishes each player may make a day, at all the wells together. A wish past them is tossed back. 0: the wells take no wishes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-events-shrines"><code>[events.shrines]</code><a class="headerlink" href="#realm-events-shrines" title="Permanent link">&para;</a></h3>
+<p>The wayside shrines: a flower left on one's offering table is gone by the next dawn, a faerie's small gift left in its place (its gifts are the loot table faeriehollow:gameplay/shrine_gift, which datapacks can change).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-shrines-gifts"></a><code>gifts</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether the faeries leave gifts for flowers at the shrines.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-events-bathhouse"><code>[events.bathhouse]</code><a class="headerlink" href="#realm-events-bathhouse" title="Permanent link">&para;</a></h3>
+<p>The Moonlit Bathhouse's warm pools: a player soaking in them is healed.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-bathhouse-heals"></a><code>heals</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether soaking in the pools heals (gives Regeneration).</td>
+</tr>
+<tr>
+<td><a id="realm-events-bathhouse-regenerationlevel"></a><code>regeneration<wbr>Level</code></td>
+<td><code>1</code></td>
+<td><code>1</code> to <code>5</code></td>
+<td>How strong the Regeneration a soak gives is: 1 is Regeneration I.</td>
+</tr>
+<tr>
+<td><a id="realm-events-bathhouse-soakticks"></a><code>soak<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>41</code> to <code>1200</code></td>
+<td>How long the Regeneration lasts after the last look at a soaking player, in ticks (they are looked at every two seconds while they stay in, so it stays on them while they do, and lingers this long once they leave).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-events-giantswake"><code>[events.giantsWake]</code><a class="headerlink" href="#realm-events-giantswake" title="Permanent link">&para;</a></h3>
+<p>Giant's Wake, where the Greater Giant sleeps until the Horn of the Old War wakes him (greaterGiantCanWake on the front page switches his waking off).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-events-giantswake-rewakerestticks"></a><code>rewake<wbr>Rest<wbr>Ticks</code></td>
+<td><code>0</code></td>
+<td><code>0</code> to <code>2400000</code></td>
+<td>How long a Wake must rest after its Greater Giant has fallen before the horn wakes another there, in ticks (24000 = a day). 0: he can be woken again at once.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-teaparties"><code>[teaParties]</code><a class="headerlink" href="#realm-teaparties" title="Permanent link">&para;</a></h2>
+<p>The faerie tea parties one comes upon now and then on the realm's land. Changes apply to parties laid from then on; how far their faeries wander and stray applies to every party's faeries at once.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-teaparties-faeriesmin"></a><code>faeries<wbr>Min</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How many faeries are at a party: between these.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-faeriesmax"></a><code>faeries<wbr>Max</code></td>
+<td><code>5</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-pomsmin"></a><code>poms<wbr>Min</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How many pom flowers grow about a party: between these.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-pomsmax"></a><code>poms<wbr>Max</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-teacupsmin"></a><code>teacups<wbr>Min</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How many Teacup Tulips grow about a party among its poms: between these.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-teacupsmax"></a><code>teacups<wbr>Max</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-platedchance"></a><code>plated<wbr>Chance</code></td>
+<td><code>50</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance each food on a party's table is set on a Faerie Plate.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-sideseatchance"></a><code>side<wbr>Seat<wbr>Chance</code></td>
+<td><code>75</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance a toadstool seat stands at each place along a table's sides, and at each at its ends.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-endseatchance"></a><code>end<wbr>Seat<wbr>Chance</code></td>
+<td><code>50</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-faerierange"></a><code>faerie<wbr>Range</code></td>
+<td><code>8</code></td>
+<td><code>2</code> to <code>32</code></td>
+<td>How far from its table a party's faerie wanders, in blocks.</td>
+</tr>
+<tr>
+<td><a id="realm-teaparties-strayeddistance"></a><code>strayed<wbr>Distance</code></td>
+<td><code>32.0</code></td>
+<td><code>8.0</code> to <code>256.0</code></td>
+<td>A party's faerie led further than this from its table, in blocks, forgets the party (never less than faerieRange).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-mushrooms"><code>[mushrooms]</code><a class="headerlink" href="#realm-mushrooms" title="Permanent link">&para;</a></h2>
+<p>The pastel mushrooms (glowcaps): their ward against monsters (switched on or off on the front page), their glow, their spreading and the dreams they bring.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-mushrooms-wardradius"></a><code>ward<wbr>Radius</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>How far a pastel mushroom keeps monsters from spawning, in blocks round it. 0: they ward nothing. Goblin camps, patrols and bombers, night reapers and Mandrakes keep away from them as far.</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-warddimensions"></a><code>ward<wbr>Dimensions</code></td>
+<td><code>[]</code></td>
+<td>a list</td>
+<td>The dimensions the ward works in, each its id, e.g. "faeriehollow:faerie_realm" or "minecraft:overworld". Empty: every dimension.</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-wardpotted"></a><code>ward<wbr>Potted</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether a potted pastel mushroom wards as one growing does.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-mushrooms-glow"><code>[mushrooms.glow]</code><a class="headerlink" href="#realm-mushrooms-glow" title="Permanent link">&para;</a></h3>
+<p>A pastel mushroom's cap brightening as a player or a faerie passes close by.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-mushrooms-glow-brightenonpass"></a><code>brighten<wbr>On<wbr>Pass</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether the caps brighten as someone passes (each is a block and light update: false spares a busy server them).</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-glow-brightenradius"></a><code>brighten<wbr>Radius</code></td>
+<td><code>2.5</code></td>
+<td><code>0.5</code> to <code>8.0</code></td>
+<td>How near a mushroom someone must pass to brighten it, in blocks.</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-glow-lingerticks"></a><code>linger<wbr>Ticks</code></td>
+<td><code>60</code> <small>(3 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>How long a mushroom stays bright once no one is near, in ticks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-mushrooms-spreading"><code>[mushrooms.spreading]</code><a class="headerlink" href="#realm-mushrooms-spreading" title="Permanent link">&para;</a></h3>
+<p>Pastel mushrooms spreading in the dark, as vanilla's mushrooms do.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-mushrooms-spreading-chance"></a><code>chance</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each random tick, that a mushroom spreads. 0: they never spread.</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-spreading-crowd"></a><code>crowd</code></td>
+<td><code>5</code></td>
+<td><code>1</code> to <code>64</code></td>
+<td>A mushroom spreads no further while this many of its color grow round it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-mushrooms-dreams"><code>[mushrooms.dreams]</code><a class="headerlink" href="#realm-mushrooms-dreams" title="Permanent link">&para;</a></h3>
+<p>Sweet dreams: whoever sleeps the night through with a potted pastel mushroom by their bed wakes with a gentle gift of its color.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-mushrooms-dreams-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether a potted pastel mushroom by a bed brings sweet dreams.</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-dreams-durationticks"></a><code>duration<wbr>Ticks</code></td>
+<td><code>3600</code> <small>(3 min)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>How long a dream's gift lasts, in ticks (20 = 1 second).</td>
+</tr>
+<tr>
+<td><a id="realm-mushrooms-dreams-radius"></a><code>radius</code></td>
+<td><code>3</code></td>
+<td><code>1</code> to <code>16</code></td>
+<td>How near the bed the potted mushroom must stand, in blocks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-plants"><code>[plants]</code><a class="headerlink" href="#realm-plants" title="Permanent link">&para;</a></h2>
+<p>How the realm's plants grow.</p>
+<h3 id="realm-plants-berrybushes"><code>[plants.berryBushes]</code><a class="headerlink" href="#realm-plants-berrybushes" title="Permanent link">&para;</a></h3>
+<p>The realm's berry bushes (Moonberries by night, Sungold by day, and the rest).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-plants-berrybushes-ripenchance"></a><code>ripen<wbr>Chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each random tick, that a bush grows a stage riper, at its own hours. 0: they never ripen.</td>
+</tr>
+<tr>
+<td><a id="realm-plants-berrybushes-ripenlight"></a><code>ripen<wbr>Light</code></td>
+<td><code>9</code></td>
+<td><code>0</code> to <code>15</code></td>
+<td>The least light a bush must stand in to ripen.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-plants-rockcandy"><code>[plants.rockCandy]</code><a class="headerlink" href="#realm-plants-rockcandy" title="Permanent link">&para;</a></h3>
+<p>Rock-Candy Blooms growing on Giant's Sugarcubes, as amethyst grows on budding amethyst.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-plants-rockcandy-growchance"></a><code>grow<wbr>Chance</code></td>
+<td><code>20</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each random tick, that a sugarcube starts or grows a bloom. 0: they never grow.</td>
+</tr>
+<tr>
+<td><a id="realm-plants-rockcandy-realmonly"></a><code>realm<wbr>Only</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether they grow only in the Faerie Realm. false: on sugarcubes in any dimension.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="realm-plants-wishingpuffs"><code>[plants.wishingPuffs]</code><a class="headerlink" href="#realm-plants-wishingpuffs" title="Permanent link">&para;</a></h3>
+<p>Wishing Puffs, whose clocks are blown off and grow again.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-plants-wishingpuffs-regrowchance"></a><code>regrow<wbr>Chance</code></td>
+<td><code>25</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>The chance (percent), each random tick, that a blown puff's clock grows again. 0: they never regrow.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="realm-snow"><code>[snow]</code><a class="headerlink" href="#realm-snow" title="Permanent link">&para;</a></h2>
+<p>The realm's snow.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="realm-snow-settles"></a><code>settles</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether snow settles on the Moonspire Peaks, and icing over Sugarloaf Mountain, while it rains in the overworld (as thin layers, never burying anything). false: it still falls, but nothing settles.</td>
+</tr>
+<tr>
+<td><a id="realm-snow-snowline"></a><code>snowline</code></td>
+<td><code>130</code></td>
+<td><code>-64</code> to <code>320</code></td>
+<td>How high up the Moonspire Peaks the snow falls and settles from, in blocks (a height, Y). Players are sent it as they join, and draw the falling snow by it.</td>
+</tr>
+<tr>
+<td><a id="realm-snow-layersmax"></a><code>layers<wbr>Max</code></td>
+<td><code>2</code></td>
+<td><code>1</code> to <code>8</code></td>
+<td>The most layers of snow or icing that settle (never more than the snowAccumulationHeight gamerule allows).</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../creatures/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Creatures">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Creatures
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../world/" class="md-footer__link md-footer__link--next" aria-label="Next: World generation and loot">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                World generation and loot
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Faerie Hollow &copy; CozyRozy. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.copy","content.code.annotate","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","search.suggest","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>

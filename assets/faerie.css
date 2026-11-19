@@ -1,0 +1,60 @@
+/* Faerie Hollow's colors on the docs theme: a rose primary and a lavender accent, warm pastels. */
+:root {
+  --md-primary-fg-color: #b4577e;
+  --md-primary-fg-color--light: #d58aa9;
+  --md-primary-fg-color--dark: #8c3d60;
+  --md-accent-fg-color: #8a6cc9;
+  --md-accent-fg-color--transparent: rgba(138, 108, 201, 0.1);
+  --fh-card-border: rgba(180, 87, 126, 0.25);
+  --fh-chip-bg: rgba(138, 108, 201, 0.12);
+  --fh-chip-fg: #5d4596;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #c86e95;
+  --md-primary-fg-color--light: #e2a3be;
+  --md-primary-fg-color--dark: #9a4a6d;
+  --md-accent-fg-color: #b8a0ee;
+  --md-accent-fg-color--transparent: rgba(184, 160, 238, 0.12);
+  --fh-card-border: rgba(226, 163, 190, 0.25);
+  --fh-chip-bg: rgba(184, 160, 238, 0.16);
+  --fh-chip-fg: #d6c8f7;
+}
+
+/* Audience cards on the home page. */
+.fh-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+.fh-cards > div {
+  border: 1px solid var(--fh-card-border);
+  border-radius: 0.6rem;
+  padding: 0.2rem 1rem 0.6rem;
+}
+.fh-cards > div p:first-child { margin-top: 0.8rem; }
+
+/* One tag on the tag reference page. */
+.fh-tag {
+  border-left: 3px solid var(--fh-card-border);
+  padding: 0.1rem 0 0.1rem 0.9rem;
+  margin: 1rem 0;
+}
+.fh-tag > p:first-child { margin-top: 0.3rem; }
+.fh-chip {
+  display: inline-block;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  padding: 0 0.45rem;
+  border-radius: 0.6rem;
+  background: var(--fh-chip-bg);
+  color: var(--fh-chip-fg);
+  vertical-align: middle;
+}
+
+/* Setting names wrap only at the word breaks the generator marks, never mid-word. */
+.md-typeset table:not([class]) td:first-child code { word-break: keep-all; overflow-wrap: normal; }
+
+/* Real-time hints next to tick values ("(5 min)") stay on one line. */
+.md-typeset td small { white-space: nowrap; }

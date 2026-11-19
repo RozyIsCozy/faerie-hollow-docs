@@ -1,0 +1,5141 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Every setting in faeriehollow-server&#x2f;familiars.toml: the bond, gathering, the satchel, speech, powers and each kind of familiar.">
+      
+      
+        <meta name="author" content="CozyRozy">
+      
+      
+        <link rel="canonical" href="https://rozyiscozy.github.io/faerie-hollow-docs/configuration/familiars/">
+      
+      
+      
+        <link rel="prev" href="../server/">
+      
+      
+        <link rel="next" href="../creatures/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.2">
+    
+    
+      
+        <title>Familiars - Faerie Hollow Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/faerie.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Faerie Hollow Docs" class="md-header__button md-logo" aria-label="Faerie Hollow Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Faerie Hollow Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Familiars
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun-moon" viewBox="0 0 24 24"><path d="M12 2v2M14.837 16.385a6 6 0 1 1-7.223-7.222c.624-.147.97.66.715 1.248a4 4 0 0 0 5.26 5.259c.589-.255 1.396.09 1.248.715M16 12a4 4 0 0 0-4-4M19 5l-1.256 1.256M20 12h2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../datapacks/" class="md-tabs__link">
+          
+  
+  Datapacks
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../resource-packs/" class="md-tabs__link">
+          
+  
+  Resource packs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../compatibility/" class="md-tabs__link">
+          
+  
+  Compatibility
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../help/hiding/" class="md-tabs__link">
+          
+  
+  Help
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Faerie Hollow Docs" class="md-nav__button md-logo" aria-label="Faerie Hollow Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sparkles" viewBox="0 0 24 24"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+
+    </a>
+    Faerie Hollow Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Getting started
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Servers and multiplayer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/updating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Updating and moving worlds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Configuration
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Configuration
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Server settings: the front page
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Familiars
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Familiars
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-bond" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bond]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[gathering]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-gathering-chase" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering.chase]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-gathering-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering.pull]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-satchel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[satchel]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-companion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[companion]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[companion]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-companion-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[companion.following]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[speech]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-speech-pacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech.pacing]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-speech-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech.health]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-powers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[powers]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-illuminate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.illuminate]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-creeperward" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.creeperWard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.guardian]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-lookout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.lookout]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-forager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.forager]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-aquatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.aquatic]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-tendgrowth" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.tendGrowth]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-courtfavor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.courtFavor]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-royalward" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.royalWard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-moonpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.moonpath]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-queensbower" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.queensBower]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-love" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.love]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-midas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.midas]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-lendwings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.lendWings]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-familiars" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[familiars]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-allay" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.allay]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-axolotl" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.axolotl]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-bat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.bat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-bee" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.bee]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.cat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-chicken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.chicken]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-cow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.cow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-faerie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.faerie]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-fox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.fox]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-frog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.frog]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-glowsquid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.glowSquid]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-goat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.goat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-mooshroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.mooshroom]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-oberon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.oberon]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-ocelot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.ocelot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-parrot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.parrot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-pig" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.pig]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-rabbit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.rabbit]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-sheep" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.sheep]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-titania" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.titania]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-turtle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.turtle]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-wolf" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.wolf]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-bewitched" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bewitched]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[bewitched]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-bewitched-trufflehog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bewitched.truffleHog]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-whispurr" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[whispurr]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-alraune" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[alraune]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.garden]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.guard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-slumberroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.slumberroot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-rootfast" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.rootfast]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-buzzybees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[buzzybees]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-wings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[wings]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../creatures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creatures
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../realm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Faerie Realm
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World generation and loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Items and blocks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Client settings and keys
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ready-made setups
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gamerules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../datapacks/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Datapacks
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Datapacks
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tag reference
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/familiars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Custom familiars
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/brewing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cauldron brews
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/loot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datapacks/worldgen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../resource-packs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Resource packs
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Resource packs
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-packs/sounds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds and music
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resource-packs/text/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Speech bubbles and translations
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../compatibility/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Compatibility
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Compatibility
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compatibility/languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Languages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Help
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Help
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/hiding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hiding and turning things off
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  FAQ
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Troubleshooting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/quirks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Known quirks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-bond" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bond]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-gathering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[gathering]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-gathering-chase" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering.chase]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-gathering-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[gathering.pull]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-satchel" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[satchel]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-companion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[companion]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[companion]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-companion-following" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[companion.following]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-speech" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[speech]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-speech-pacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech.pacing]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-speech-health" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[speech.health]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-powers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[powers]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-illuminate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.illuminate]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-creeperward" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.creeperWard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-guardian" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.guardian]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-lookout" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.lookout]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-forager" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.forager]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-aquatic" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.aquatic]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-tendgrowth" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.tendGrowth]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-courtfavor" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.courtFavor]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-royalward" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.royalWard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-moonpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.moonpath]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-queensbower" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.queensBower]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-love" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.love]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-midas" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.midas]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-powers-lendwings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[powers.lendWings]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-familiars" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[familiars]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-allay" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.allay]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-axolotl" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.axolotl]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-bat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.bat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-bee" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.bee]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-cat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.cat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-chicken" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.chicken]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-cow" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.cow]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-faerie" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.faerie]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-fox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.fox]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-frog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.frog]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-glowsquid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.glowSquid]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-goat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.goat]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-mooshroom" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.mooshroom]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-oberon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.oberon]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-ocelot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.ocelot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-parrot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.parrot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-pig" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.pig]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-rabbit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.rabbit]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-sheep" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.sheep]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-titania" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.titania]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-turtle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.turtle]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-familiars-wolf" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[familiars.wolf]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-bewitched" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bewitched]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[bewitched]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-bewitched-trufflehog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[bewitched.truffleHog]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-whispurr" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[whispurr]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-alraune" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune]</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="[alraune]">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.garden]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.guard]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-slumberroot" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.slumberroot]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#familiars-alraune-rootfast" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[alraune.rootfast]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-buzzybees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[buzzybees]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#familiars-wings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>[wings]</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="familiar-settings">Familiar settings<a class="headerlink" href="#familiar-settings" title="Permanent link">&para;</a></h1>
+<p>Every setting in <code>faeriehollow-server/familiars.toml</code>, in the order it appears in the file. The front page
+(<a href="../server/"><code>faeriehollow-server.toml</code></a>) holds the bond's highest level, gathering's and speech's on/off, which
+creatures can't be bonded, and the percentages applied on top of these.</p>
+<div class="admonition tip">
+<p class="admonition-title">Powers and percentages</p>
+<p>A familiar power's strength is its familiar's own value (its <a href="../../datapacks/familiars/">species data</a>) times the
+power's <code>powerPercent</code> here, the familiar's own <code>powerPercent</code> here, and the front page's <code>powerPercent</code>. Only
+amounts scale (a ward's reach, a breath, a chance); waits between uses shorten to match, and the level a power
+unlocks at never changes. <code>enabled = false</code> switches a power off for every familiar that has it.</p>
+</div>
+<h2 id="familiars-bond"><code>[bond]</code><a class="headerlink" href="#familiars-bond" title="Permanent link">&para;</a></h2>
+<p>How a familiar's affection grows into bond levels (the highest level is on the front page).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-bond-curvebase"></a><code>curve<wbr>Base</code></td>
+<td><code>20.0</code></td>
+<td><code>1.0</code> to <code>10000.0</code></td>
+<td>Affection needed for level L, in all: round(curveBase * (L - 1) ^ curveExponent).</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-curveexponent"></a><code>curve<wbr>Exponent</code></td>
+<td><code>1.5</code></td>
+<td><code>1.0</code> to <code>4.0</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-companionshipintervalticks"></a><code>companionship<wbr>Interval<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>20</code> to <code>72000</code></td>
+<td>Ticks a familiar must spend accompanying you to earn companionship affection (1200 = 1 minute).</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-companionshippoints"></a><code>companionship<wbr>Points</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>Affection earned each time.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-itemsperaffectionpoint"></a><code>items<wbr>Per<wbr>Affection<wbr>Point</code></td>
+<td><code>32</code></td>
+<td><code>1</code> to <code>100000</code></td>
+<td>Items a familiar must gather to earn one affection point.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-treatpoints"></a><code>treat<wbr>Points</code></td>
+<td><code>6</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>Affection gained when you feed your familiar one of its treats.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-treatcooldownticks"></a><code>treat<wbr>Cooldown<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>0</code> to <code>1728000</code></td>
+<td>Ticks before a familiar is hungry for another treat (6000 = 5 minutes).</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-feyfoodpercent"></a><code>fey<wbr>Food<wbr>Percent</code></td>
+<td><code>50</code></td>
+<td><code>0</code> to <code>100</code></td>
+<td>Affection from Fey Food, which any familiar eats, as a percentage of treatPoints. It shares the treat cooldown.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-cordialpercent"></a><code>cordial<wbr>Percent</code></td>
+<td><code>400</code></td>
+<td><code>0</code> to <code>10000</code></td>
+<td>Affection from Kindred Cordial, brewed in a Bewitched Cauldron, as a percentage of treatPoints. Any familiar takes it from its owner. It shares the treat cooldown.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-favorpercent"></a><code>favor<wbr>Percent</code></td>
+<td><code>150</code></td>
+<td><code>100</code> to <code>1000</code></td>
+<td>How fast a familiar's affection grows while its owner carries Faerie Favor, as a percentage of its usual pace (its species' pace and all, Titania's and Oberon's among them). 100 makes the amulet do nothing.</td>
+</tr>
+<tr>
+<td><a id="familiars-bond-unlocklevelsfollowmaxlevel"></a><code>unlock<wbr>Levels<wbr>Follow<wbr>Max<wbr>Level</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>The bond levels powers open at (Titania's and Oberon's gifts, an axolotl's mending...) are written for a highest level of 10. true: on a server whose highest level is another, each is moved to match (with 20, a gift of level 10 opens at 20, one of level 3 at 5). false: each stays at its own level, and one past the highest opens at the highest.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-gathering"><code>[gathering]</code><a class="headerlink" href="#familiars-gathering" title="Permanent link">&para;</a></h2>
+<p>Item gathering (switched on or off for everyone on the front page). Each value is reached at level 1 (min, slowest) and at the highest level (max, fastest).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-gathering-radiusmin"></a><code>radius<wbr>Min</code></td>
+<td><code>3.0</code></td>
+<td><code>0.5</code> to <code>64.0</code></td>
+<td>Reach in blocks.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-radiusmax"></a><code>radius<wbr>Max</code></td>
+<td><code>12.0</code></td>
+<td><code>0.5</code> to <code>64.0</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-slowestintervalticks"></a><code>slowest<wbr>Interval<wbr>Ticks</code></td>
+<td><code>30.0</code> <small>(1.5 s)</small></td>
+<td><code>1.0</code> to <code>1200.0</code></td>
+<td>Ticks between gathering rounds.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-fastestintervalticks"></a><code>fastest<wbr>Interval<wbr>Ticks</code></td>
+<td><code>5.0</code> <small>(0.25 s)</small></td>
+<td><code>1.0</code> to <code>1200.0</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-batchmin"></a><code>batch<wbr>Min</code></td>
+<td><code>1</code></td>
+<td><code>1</code> to <code>64</code></td>
+<td>Items handled at once.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-batchmax"></a><code>batch<wbr>Max</code></td>
+<td><code>4</code></td>
+<td><code>1</code> to <code>64</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-ignoreownerdrops"></a><code>ignore<wbr>Owner<wbr>Drops</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Leave items the owner threw away on purpose.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-foragecooldownticks"></a><code>forage<wbr>Cooldown<wbr>Ticks</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks a foraging familiar (a fox, chicken, frog...) waits after a roll for a find before it may roll again (600 = 30 seconds), whatever it gathers, so a stream of items from a dropper finds no more than ordinary gathering does; one wait shared by all its forager powers. 0 rolls for every gathered stack.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-gathering-chase"><code>[gathering.chase]</code><a class="headerlink" href="#familiars-gathering-chase" title="Permanent link">&para;</a></h3>
+<p>How a familiar runs after loot itself.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-gathering-chase-chasefromowner"></a><code>chase<wbr>From<wbr>Owner</code></td>
+<td><code>11.0</code></td>
+<td><code>0.0</code> to <code>11.0</code></td>
+<td>How far from its owner (blocks) a familiar runs after loot itself; farther, it only draws it in. 0: it never runs after loot.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-chase-chasespeed"></a><code>chase<wbr>Speed</code></td>
+<td><code>1.6</code></td>
+<td><code>0.1</code> to <code>4.0</code></td>
+<td>How fast a walking familiar runs after loot, as a multiple of its walking speed.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-chase-flierchasespeed"></a><code>flier<wbr>Chase<wbr>Speed</code></td>
+<td><code>0.35</code></td>
+<td><code>0.05</code> to <code>2.0</code></td>
+<td>How fast a flying familiar goes after loot, in blocks a tick.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-chase-chasetimeoutticks"></a><code>chase<wbr>Timeout<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks it runs after one find before it gives up and draws it in instead.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-gathering-pull"><code>[gathering.pull]</code><a class="headerlink" href="#familiars-gathering-pull" title="Permanent link">&para;</a></h3>
+<p>How a familiar draws loot in.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-gathering-pull-pullspeedmin"></a><code>pull<wbr>Speed<wbr>Min</code></td>
+<td><code>0.25</code></td>
+<td><code>0.01</code> to <code>4.0</code></td>
+<td>How fast loot it draws in flies to it, in blocks a tick, at level 1 and at the highest level.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-pull-pullspeedmax"></a><code>pull<wbr>Speed<wbr>Max</code></td>
+<td><code>0.8</code></td>
+<td><code>0.01</code> to <code>4.0</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-gathering-pull-maxreach"></a><code>max<wbr>Reach</code></td>
+<td><code>64.0</code></td>
+<td><code>1.0</code> to <code>128.0</code></td>
+<td>The farthest any familiar reaches for loot (blocks), whatever its reach and its kind's own multiplier say: a bound that keeps its searches cheap.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-satchel"><code>[satchel]</code><a class="headerlink" href="#familiars-satchel" title="Permanent link">&para;</a></h2>
+<p>The Familiar Satchel's pockets. A bag has 27 slots; slotsMin of them are open without a familiar or at level 1, growing evenly to slotsMax at the highest level. Items in a slot that closes stay there and can still be taken out.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-satchel-slotsmin"></a><code>slots<wbr>Min</code></td>
+<td><code>9</code></td>
+<td><code>0</code> to <code>27</code></td>
+<td>Open pockets without a familiar or at level 1, and at the highest level.</td>
+</tr>
+<tr>
+<td><a id="familiars-satchel-slotsmax"></a><code>slots<wbr>Max</code></td>
+<td><code>27</code></td>
+<td><code>0</code> to <code>27</code></td>
+<td>See the setting above.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-companion"><code>[companion]</code><a class="headerlink" href="#familiars-companion" title="Permanent link">&para;</a></h2>
+<p>A familiar out in the world beside you.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-companion-teleportdistance"></a><code>teleport<wbr>Distance</code></td>
+<td><code>16.0</code></td>
+<td><code>12.0</code> to <code>128.0</code></td>
+<td>A familiar farther than this (blocks) from its owner teleports back to them. Never below 12, the furthest a familiar races its owner to loot.</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-faintrecoveryticks"></a><code>faint<wbr>Recovery<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>20</code> to <code>72000</code></td>
+<td>Ticks a familiar that fights (a wolf) rests in its Familiar Satchel after it faints, before it comes back out (1200 = 1 minute).</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-fightmemoryticks"></a><code>fight<wbr>Memory<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>How long a familiar that fights (a wolf) stays in its owner's fight after the last blow traded, in ticks; also how long it remembers a foe.</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-mealsheal"></a><code>meals<wbr>Heal</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Feeding a hurt familiar heals it (by the food's nourishment), even when it is not hungry.</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-faerielight"></a><code>faerie<wbr>Light</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Light-giving familiars (faeries, Titania and Oberon, the glow squid) light up the blocks round them as they go, like a carried lantern: the light follows them and is gone behind them. false: they still glow, but light up nothing round them.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-companion-following"><code>[companion.following]</code><a class="headerlink" href="#familiars-companion-following" title="Permanent link">&para;</a></h3>
+<p>How a familiar keeps up with its owner.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-companion-following-followstartdistance"></a><code>follow<wbr>Start<wbr>Distance</code></td>
+<td><code>6.0</code></td>
+<td><code>1.0</code> to <code>12.0</code></td>
+<td>Farther than this from its owner (blocks), a familiar walks after them; also how near it must be to climb up behind them on a unicorn.</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-following-stuckteleportticks"></a><code>stuck<wbr>Teleport<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks a familiar may be stuck inside a block before it is moved beside its owner.</td>
+</tr>
+<tr>
+<td><a id="familiars-companion-following-respawndelayticks"></a><code>respawn<wbr>Delay<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks before a familiar killed or unloaded comes back out of its satchel (five times as long after it could not be brought out).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-speech"><code>[speech]</code><a class="headerlink" href="#familiars-speech" title="Permanent link">&para;</a></h2>
+<p>What familiars say (speech bubbles are switched on or off for everyone on the front page).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-speech-hungerreminderticks"></a><code>hunger<wbr>Reminder<wbr>Ticks</code></td>
+<td><code>12000</code> <small>(10 min)</small></td>
+<td><code>0</code> to <code>1728000</code></td>
+<td>Ticks between a hungry familiar's reminders that it could eat (12000 = 10 minutes); 0 says it only once.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-bagfullreminderticks"></a><code>bag<wbr>Full<wbr>Reminder<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>0</code> to <code>1728000</code></td>
+<td>Ticks between its reminders that its satchel is full while its finds go to your inventory instead.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-speech-pacing"><code>[speech.pacing]</code><a class="headerlink" href="#familiars-speech-pacing" title="Permanent link">&para;</a></h3>
+<p>How often familiars speak.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-speech-pacing-quietticks"></a><code>quiet<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks after anything it says before it mentions anything else (answers to you are never held back).</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-pacing-settleticks"></a><code>settle<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks after it comes out of its satchel before it mentions anything.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-pacing-worrycooldownticks"></a><code>worry<wbr>Cooldown<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>0</code> to <code>1728000</code></td>
+<td>Ticks before it says again that you are badly hurt.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-pacing-pettingcooldownticks"></a><code>petting<wbr>Cooldown<wbr>Ticks</code></td>
+<td><code>30</code> <small>(1.5 s)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks before it answers petting again.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-pacing-faeriefindonein"></a><code>faerie<wbr>Find<wbr>One<wbr>In</code></td>
+<td><code>30</code></td>
+<td><code>0</code> to <code>100000</code></td>
+<td>A faerie calls out about one find it gathers in this many; 0 never.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-pacing-faeriefindcooldownticks"></a><code>faerie<wbr>Find<wbr>Cooldown<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>0</code> to <code>1728000</code></td>
+<td>Ticks after it calls out about a find before it may again.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-speech-health"><code>[speech.health]</code><a class="headerlink" href="#familiars-speech-health" title="Permanent link">&para;</a></h3>
+<p>When familiars speak of hurts, as fractions of health (0 to 1).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-speech-health-hurtbelow"></a><code>hurt<wbr>Below</code></td>
+<td><code>0.3333333333333333</code></td>
+<td><code>0.0</code> to <code>1.0</code></td>
+<td>A familiar that fights says it is badly hurt at or below this share of its health...</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-health-healedabove"></a><code>healed<wbr>Above</code></td>
+<td><code>0.5</code></td>
+<td><code>0.0</code> to <code>1.0</code></td>
+<td>...and says so again only once it has healed past this share.</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-health-ownerhurtbelow"></a><code>owner<wbr>Hurt<wbr>Below</code></td>
+<td><code>0.3</code></td>
+<td><code>0.0</code> to <code>1.0</code></td>
+<td>It says you are badly hurt at or below this share of your health...</td>
+</tr>
+<tr>
+<td><a id="familiars-speech-health-ownerhealedabove"></a><code>owner<wbr>Healed<wbr>Above</code></td>
+<td><code>0.6</code></td>
+<td><code>0.0</code> to <code>1.0</code></td>
+<td>...and again only once you have healed past this share.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-powers"><code>[powers]</code><a class="headerlink" href="#familiars-powers" title="Permanent link">&para;</a></h2>
+<p>Each familiar power: whether it works, how strong it is (a percentage, on top of the front page's powerPercent and each familiar's own), and its own timings. Each familiar's exact numbers (a cat's ward radius...) are its species data, which datapacks can change.</p>
+<h3 id="familiars-powers-illuminate"><code>[powers.illuminate]</code><a class="headerlink" href="#familiars-powers-illuminate" title="Permanent link">&para;</a></h3>
+<p>Illuminate: a faerie's, Titania's and Oberon's light, and the glow squid's. (companion.faerieLight switches off only the light they place in the world.)</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-illuminate-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-illuminate-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-creeperward"><code>[powers.creeperWard]</code><a class="headerlink" href="#familiars-powers-creeperward" title="Permanent link">&para;</a></h3>
+<p>Creeper Ward (the cat, the ocelot): creepers and goblin bombers near its owner lose their nerve and flee. Its flight settings are shared by the Grimalkin's and Nagual's own ward.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-creeperward-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-creeperward-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-creeperward-fleespeed"></a><code>flee<wbr>Speed</code></td>
+<td><code>1.3</code></td>
+<td><code>0.1</code> to <code>4.0</code></td>
+<td>How fast a creeper or bomber sent off goes, as a multiple of its own speed.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-creeperward-fleereach"></a><code>flee<wbr>Reach</code></td>
+<td><code>16</code></td>
+<td><code>1</code> to <code>64</code></td>
+<td>How far off (blocks across) it looks for ground away from the ward to flee to.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-creeperward-fleeheight"></a><code>flee<wbr>Height</code></td>
+<td><code>7</code></td>
+<td><code>1</code> to <code>32</code></td>
+<td>How far up or down (blocks) it looks for that ground.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-creeperward-bombernerveticks"></a><code>bomber<wbr>Nerve<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks a goblin bomber, unnerved, keeps from lighting its fuse again (and one sent off is left to its way before it is sent off again).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-guardian"><code>[powers.guardian]</code><a class="headerlink" href="#familiars-powers-guardian" title="Permanent link">&para;</a></h3>
+<p>Guardian (the wolf): it sets on the monsters hunting its owner, harder as the bond grows. (companion.fightMemoryTicks sets how long a fight lasts.)</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-guardian-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-guardian-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-lookout"><code>[powers.lookout]</code><a class="headerlink" href="#familiars-powers-lookout" title="Permanent link">&para;</a></h3>
+<p>Lookout (the bat, the parrot): it marks monsters near its owner so they glow.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-lookout-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lookout-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lookout-markticks"></a><code>mark<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks the monster it marks glows, below the full bond.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lookout-fullbondscanticks"></a><code>full<wbr>Bond<wbr>Scan<wbr>Ticks</code></td>
+<td><code>20</code> <small>(1 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>At the full bond it keeps every monster in reach marked: ticks between its looks. Keep it shorter than fullBondMarkTicks, or the glow flickers off between looks.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lookout-fullbondmarkticks"></a><code>full<wbr>Bond<wbr>Mark<wbr>Ticks</code></td>
+<td><code>60</code> <small>(3 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>At the full bond, ticks each of its marks glows.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-forager"><code>[powers.forager]</code><a class="headerlink" href="#familiars-powers-forager" title="Permanent link">&para;</a></h3>
+<p>Forager (the chicken, the fox, the frog, the pig): now and then it sniffs out a find as it gathers. (gathering.forageCooldownTicks sets how often it may try.)</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-forager-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-forager-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-aquatic"><code>[powers.aquatic]</code><a class="headerlink" href="#familiars-powers-aquatic" title="Permanent link">&para;</a></h3>
+<p>Aquatic Bond (the axolotl, the turtle, the glow squid): its owner's breath lasts longer underwater, and from a bond level it mends their wounds there.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-aquatic-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-aquatic-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-aquatic-mendingticks"></a><code>mending<wbr>Ticks</code></td>
+<td><code>120</code> <small>(6 s)</small></td>
+<td><code>1</code> to <code>6000</code></td>
+<td>Ticks each Regeneration it gives underwater lasts; it gives another once that one is over.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-aquatic-fullbondmendingamplifier"></a><code>full<wbr>Bond<wbr>Mending<wbr>Amplifier</code></td>
+<td><code>1</code></td>
+<td><code>0</code> to <code>4</code></td>
+<td>The Regeneration's strength at the full bond: 0 is Regeneration I, 1 is II (below the full bond it is I).</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-aquatic-waterbreathingholdticks"></a><code>water<wbr>Breathing<wbr>Hold<wbr>Ticks</code></td>
+<td><code>400</code> <small>(20 s)</small></td>
+<td><code>20</code> to <code>72000</code></td>
+<td>At the full bond it holds Water Breathing on its owner, on land too: given this long, in ticks, each time.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-aquatic-waterbreathingtopupticks"></a><code>water<wbr>Breathing<wbr>Top<wbr>Up<wbr>Ticks</code></td>
+<td><code>240</code> <small>(12 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Given again once this little is left (ticks); above 200 its icon never starts to flash. Kept below waterBreathingHoldTicks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-tendgrowth"><code>[powers.tendGrowth]</code><a class="headerlink" href="#familiars-powers-tendgrowth" title="Permanent link">&para;</a></h3>
+<p>Moonlit Garden and Sun's Bounty (Titania, Oberon): growing moments for what grows about the owner, and Oberon's doubled harvests.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-tendgrowth-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-tendgrowth-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-tendgrowth-intervalticks"></a><code>interval<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>6000</code></td>
+<td>Ticks between its tendings (each gives its familiar's number of growing moments).</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-tendgrowth-favoredmoments"></a><code>favored<wbr>Moments</code></td>
+<td><code>2</code></td>
+<td><code>1</code> to <code>16</code></td>
+<td>Growing moments each of the realm's plants of its own court gets at a tending, where anything else gets one.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-tendgrowth-reachupdown"></a><code>reach<wbr>Up<wbr>Down</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>8</code></td>
+<td>How far above and below its owner's feet it tends (blocks).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-courtfavor"><code>[powers.courtFavor]</code><a class="headerlink" href="#familiars-powers-courtfavor" title="Permanent link">&para;</a></h3>
+<p>Court Favor (Titania, Oberon): wild faeries of its court bow to the owner, and the first treat they offer one wins it over.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-courtfavor-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-courtfavor-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-courtfavor-bowrange"></a><code>bow<wbr>Range</code></td>
+<td><code>6.0</code></td>
+<td><code>1.0</code> to <code>32.0</code></td>
+<td>How near the owner (blocks) a faerie of the court bows to them.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-courtfavor-bowagainticks"></a><code>bow<wbr>Again<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>1</code> to <code>1728000</code></td>
+<td>Ticks before a faerie that bowed bows to them again.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-royalward"><code>[powers.royalWard]</code><a class="headerlink" href="#familiars-powers-royalward" title="Permanent link">&para;</a></h3>
+<p>Queen's Lullaby and King of Shadows (Titania, Oberon): monsters near (or far from) the owner leave them be.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-royalward-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-royalward-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-royalward-provokedticks"></a><code>provoked<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>0</code> to <code>100</code></td>
+<td>A monster that traded a blow with the owner this recently (ticks) is not swayed. The game forgets who last hurt whom after 100 ticks, so it can be no longer.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-moonpath"><code>[powers.moonpath]</code><a class="headerlink" href="#familiars-powers-moonpath" title="Permanent link">&para;</a></h3>
+<p>Moonpath (Titania): motes of light lead the owner home.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-moonpath-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-moonpath-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-queensbower"><code>[powers.queensBower]</code><a class="headerlink" href="#familiars-powers-queensbower" title="Permanent link">&para;</a></h3>
+<p>The Queen's Bower (Titania): a bower of moss and blossom to sleep the night in.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-queensbower-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-queensbower-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-love"><code>[powers.love]</code><a class="headerlink" href="#familiars-powers-love" title="Permanent link">&para;</a></h3>
+<p>Love-in-idleness (Oberon): animals about the owner fall in love and breed.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-love-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-love-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-midas"><code>[powers.midas]</code><a class="headerlink" href="#familiars-powers-midas" title="Permanent link">&para;</a></h3>
+<p>The Midas Touch (Oberon): once a day it turns a few things in the owner's inventory to gold.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-midas-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-midas-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-midas-fromdaytime"></a><code>from<wbr>Day<wbr>Time</code></td>
+<td><code>6000</code></td>
+<td><code>0</code> to <code>23999</code></td>
+<td>The time of day from which it gilds, as the time command counts it: 0 is sunrise, 6000 noon, 12000 sunset.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-powers-lendwings"><code>[powers.lendWings]</code><a class="headerlink" href="#familiars-powers-lendwings" title="Permanent link">&para;</a></h3>
+<p>Royal Wings (Titania, Oberon): faerie wings lent to the owner.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-powers-lendwings-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether this power works. false: a familiar that has it already out puts it away at once (undoing anything it placed), and takes it up again as soon as it is switched back on.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lendwings-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong this power is, as a percentage (on top of each familiar's own and the front page's powerPercent): its reach, its chance or its count grow with it, the waits between its uses shorten to match, and the bond level it opens at never changes. 0 leaves it at its weakest; enabled = false switches it off.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lendwings-catchfallblocks"></a><code>catch<wbr>Fall<wbr>Blocks</code></td>
+<td><code>4.0</code></td>
+<td><code>1.0</code> to <code>256.0</code></td>
+<td>Where it only catches its owner as they fall (outside the realm, below the full bond): how far they must have fallen, in blocks, to be caught.</td>
+</tr>
+<tr>
+<td><a id="familiars-powers-lendwings-holdticks"></a><code>hold<wbr>Ticks</code></td>
+<td><code>400</code> <small>(20 s)</small></td>
+<td><code>160</code> to <code>72000</code></td>
+<td>Wings it holds on its owner are kept from running out: given this long, in ticks, each time they run low.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-familiars"><code>[familiars]</code><a class="headerlink" href="#familiars-familiars" title="Permanent link">&para;</a></h2>
+<p>Each kind of familiar the mod defines: how fast its bond grows and how strong its powers are, as percentages of its own (whether it can be bonded at all is on the front page).</p>
+<h3 id="familiars-familiars-allay"><code>[familiars.allay]</code><a class="headerlink" href="#familiars-familiars-allay" title="Permanent link">&para;</a></h3>
+<p>The allay (minecraft:allay).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-allay-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-allay-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-axolotl"><code>[familiars.axolotl]</code><a class="headerlink" href="#familiars-familiars-axolotl" title="Permanent link">&para;</a></h3>
+<p>The axolotl (minecraft:axolotl).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-axolotl-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-axolotl-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-bat"><code>[familiars.bat]</code><a class="headerlink" href="#familiars-familiars-bat" title="Permanent link">&para;</a></h3>
+<p>The bat (minecraft:bat).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-bat-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-bat-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-bee"><code>[familiars.bee]</code><a class="headerlink" href="#familiars-familiars-bee" title="Permanent link">&para;</a></h3>
+<p>The bee (minecraft:bee).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-bee-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-bee-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-cat"><code>[familiars.cat]</code><a class="headerlink" href="#familiars-familiars-cat" title="Permanent link">&para;</a></h3>
+<p>The cat (minecraft:cat).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-cat-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-cat-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-chicken"><code>[familiars.chicken]</code><a class="headerlink" href="#familiars-familiars-chicken" title="Permanent link">&para;</a></h3>
+<p>The chicken (minecraft:chicken).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-chicken-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-chicken-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-cow"><code>[familiars.cow]</code><a class="headerlink" href="#familiars-familiars-cow" title="Permanent link">&para;</a></h3>
+<p>The cow (minecraft:cow).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-cow-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-cow-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-faerie"><code>[familiars.faerie]</code><a class="headerlink" href="#familiars-familiars-faerie" title="Permanent link">&para;</a></h3>
+<p>The faerie (faeriehollow:faerie).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-faerie-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-faerie-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-fox"><code>[familiars.fox]</code><a class="headerlink" href="#familiars-familiars-fox" title="Permanent link">&para;</a></h3>
+<p>The fox (minecraft:fox).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-fox-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-fox-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-frog"><code>[familiars.frog]</code><a class="headerlink" href="#familiars-familiars-frog" title="Permanent link">&para;</a></h3>
+<p>The frog (minecraft:frog).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-frog-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-frog-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-glowsquid"><code>[familiars.glowSquid]</code><a class="headerlink" href="#familiars-familiars-glowsquid" title="Permanent link">&para;</a></h3>
+<p>The glow squid (minecraft:glow_squid).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-glowsquid-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-glowsquid-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-goat"><code>[familiars.goat]</code><a class="headerlink" href="#familiars-familiars-goat" title="Permanent link">&para;</a></h3>
+<p>The goat (minecraft:goat).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-goat-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-goat-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-mooshroom"><code>[familiars.mooshroom]</code><a class="headerlink" href="#familiars-familiars-mooshroom" title="Permanent link">&para;</a></h3>
+<p>The mooshroom (minecraft:mooshroom).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-mooshroom-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-mooshroom-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-oberon"><code>[familiars.oberon]</code><a class="headerlink" href="#familiars-familiars-oberon" title="Permanent link">&para;</a></h3>
+<p>The oberon (faeriehollow:oberon).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-oberon-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-oberon-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-ocelot"><code>[familiars.ocelot]</code><a class="headerlink" href="#familiars-familiars-ocelot" title="Permanent link">&para;</a></h3>
+<p>The ocelot (minecraft:ocelot).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-ocelot-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-ocelot-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-parrot"><code>[familiars.parrot]</code><a class="headerlink" href="#familiars-familiars-parrot" title="Permanent link">&para;</a></h3>
+<p>The parrot (minecraft:parrot).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-parrot-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-parrot-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-pig"><code>[familiars.pig]</code><a class="headerlink" href="#familiars-familiars-pig" title="Permanent link">&para;</a></h3>
+<p>The pig (minecraft:pig).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-pig-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-pig-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-rabbit"><code>[familiars.rabbit]</code><a class="headerlink" href="#familiars-familiars-rabbit" title="Permanent link">&para;</a></h3>
+<p>The rabbit (minecraft:rabbit).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-rabbit-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-rabbit-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-sheep"><code>[familiars.sheep]</code><a class="headerlink" href="#familiars-familiars-sheep" title="Permanent link">&para;</a></h3>
+<p>The sheep (minecraft:sheep).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-sheep-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-sheep-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-titania"><code>[familiars.titania]</code><a class="headerlink" href="#familiars-familiars-titania" title="Permanent link">&para;</a></h3>
+<p>The titania (faeriehollow:titania).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-titania-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-titania-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-turtle"><code>[familiars.turtle]</code><a class="headerlink" href="#familiars-familiars-turtle" title="Permanent link">&para;</a></h3>
+<p>The turtle (minecraft:turtle).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-turtle-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-turtle-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-familiars-wolf"><code>[familiars.wolf]</code><a class="headerlink" href="#familiars-familiars-wolf" title="Permanent link">&para;</a></h3>
+<p>The wolf (minecraft:wolf).</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-familiars-wolf-affectionpercent"></a><code>affection<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How fast its bond grows, as a percentage of its own pace (on top of the front page's affectionPercent).</td>
+</tr>
+<tr>
+<td><a id="familiars-familiars-wolf-powerpercent"></a><code>power<wbr>Percent</code></td>
+<td><code>100</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How strong its powers are, as a percentage (on top of each power's own and the front page's powerPercent). 0 leaves them at their weakest.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-bewitched"><code>[bewitched]</code><a class="headerlink" href="#familiars-bewitched" title="Permanent link">&para;</a></h2>
+<p>Bewitched creatures: those a Witch's Paintbrush has turned into their bewitched forms.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-bewitched-strangeeggonein"></a><code>strange<wbr>Egg<wbr>One<wbr>In</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>One egg in this many that a Blue Moon Hen (a bewitched chicken) lays is a Strange Egg, for a Faerie Wedding Cake; 0 for none.</td>
+</tr>
+<tr>
+<td><a id="familiars-bewitched-naturalward"></a><code>natural<wbr>Ward</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>A bewitched cat or ocelot (a Grimalkin, a Nagual) that is no one's familiar wards creepers and goblin bombers off itself, as far as its kind's Creeper Ward reaches at the weakest bond.</td>
+</tr>
+<tr>
+<td><a id="familiars-bewitched-gnarledwandlurerange"></a><code>gnarled<wbr>Wand<wbr>Lure<wbr>Range</code></td>
+<td><code>10.0</code></td>
+<td><code>1.0</code> to <code>64.0</code></td>
+<td>How far (blocks) a Witch's Gnarled Wand draws bewitched creatures from, through walls.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-bewitched-trufflehog"><code>[bewitched.truffleHog]</code><a class="headerlink" href="#familiars-bewitched-trufflehog" title="Permanent link">&para;</a></h3>
+<p>The Truffle Hog (a bewitched pig), which roots up pastel mushrooms in the realm.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-bewitched-trufflehog-enabled"></a><code>enabled</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Whether Truffle Hogs root up mushrooms at all.</td>
+</tr>
+<tr>
+<td><a id="familiars-bewitched-trufflehog-findwaitminticks"></a><code>find<wbr>Wait<wbr>Min<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>1</code> to <code>1728000</code></td>
+<td>The shortest and longest wait between one mushroom it turns up and rooting for the next, in ticks.</td>
+</tr>
+<tr>
+<td><a id="familiars-bewitched-trufflehog-findwaitmaxticks"></a><code>find<wbr>Wait<wbr>Max<wbr>Ticks</code></td>
+<td><code>12000</code> <small>(10 min)</small></td>
+<td><code>1</code> to <code>1728000</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-bewitched-trufflehog-rootingticks"></a><code>rooting<wbr>Ticks</code></td>
+<td><code>50</code> <small>(2.5 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks it roots at the ground before the mushroom turns up.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-whispurr"><code>[whispurr]</code><a class="headerlink" href="#familiars-whispurr" title="Permanent link">&para;</a></h2>
+<p>The Whispurrs: their work round their baskets, and how a wild one is won over.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-whispurr-arearadiusmin"></a><code>area<wbr>Radius<wbr>Min</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>The smallest work area a Whispurr Basket is sized to (sneak-use it with an empty hand), in blocks out from the basket each way across: 2 is a 5 x 5 area.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-arearadiusmax"></a><code>area<wbr>Radius<wbr>Max</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>The largest: 8 is a 17 x 17 area.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-arearadius"></a><code>area<wbr>Radius</code></td>
+<td><code>4</code></td>
+<td><code>0</code> to <code>16</code></td>
+<td>A new basket's.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-areabelow"></a><code>area<wbr>Below</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>8</code></td>
+<td>How many blocks under its basket a Whispurr's work area reaches (a field or a pond a step or two down).</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-areaabove"></a><code>area<wbr>Above</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>8</code></td>
+<td>How many blocks over it.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-workintervalticks"></a><code>work<wbr>Interval<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>Ticks a Whispurr waits after each piece of work (a crop reaped, a fish caught, a pair fed) before the next.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-fishingticksmin"></a><code>fishing<wbr>Ticks<wbr>Min</code></td>
+<td><code>200</code> <small>(10 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>The shortest and longest waits for a bite, in ticks, before its rod's Lure shortens them (as a player's does).</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-fishingticksmax"></a><code>fishing<wbr>Ticks<wbr>Max</code></td>
+<td><code>600</code> <small>(30 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-breedingcap"></a><code>breeding<wbr>Cap</code></td>
+<td><code>8</code></td>
+<td><code>0</code> to <code>1000</code></td>
+<td>How many of one kind of animal a breeding Whispurr fills its work area with (young counted), before it stops feeding them.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-breedingcaps"></a><code>breeding<wbr>Caps</code></td>
+<td><code>minecraft:chicken=12</code></td>
+<td>a list</td>
+<td>Caps of their own for some kinds, each "namespace:entity=cap".</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-trustplays"></a><code>trust<wbr>Plays</code></td>
+<td><code>3</code></td>
+<td><code>1</code> to <code>64</code></td>
+<td>How many times a player plays with a wild Whispurr (sneaking up to it with a Ribbon in hand) before it trusts them and is theirs.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-playticks"></a><code>play<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>6000</code></td>
+<td>How long each game lasts, in ticks of its batting at the Ribbon.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-playrestticks"></a><code>play<wbr>Rest<wbr>Ticks</code></td>
+<td><code>1200</code> <small>(1 min)</small></td>
+<td><code>0</code> to <code>72000</code></td>
+<td>Ticks after a game before it plays with that player again: games closer together count once.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-ribbonlurerange"></a><code>ribbon<wbr>Lure<wbr>Range</code></td>
+<td><code>10.0</code></td>
+<td><code>1.0</code> to <code>64.0</code></td>
+<td>How far (blocks) a player's Ribbon draws their own Whispurr from.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-followrange"></a><code>follow<wbr>Range</code></td>
+<td><code>32.0</code></td>
+<td><code>2.0</code> to <code>128.0</code></td>
+<td>A Whispurr following its player never follows farther than this (blocks): it waits there instead.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-basketforgetafterticks"></a><code>basket<wbr>Forget<wbr>After<wbr>Ticks</code></td>
+<td><code>6000</code> <small>(5 min)</small></td>
+<td><code>200</code> to <code>1728000</code></td>
+<td>A basket lets its Whispurr go (its cushion white again) once it has not come by for this long, in ticks.</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-fishinglureticksperlevel"></a><code>fishing<wbr>Lure<wbr>Ticks<wbr>Per<wbr>Level</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>0</code> to <code>6000</code></td>
+<td>Ticks each level of Lure on its rod takes off its wait for a bite (as a player's)...</td>
+</tr>
+<tr>
+<td><a id="familiars-whispurr-fishingfloorticks"></a><code>fishing<wbr>Floor<wbr>Ticks</code></td>
+<td><code>20</code> <small>(1 s)</small></td>
+<td><code>1</code> to <code>72000</code></td>
+<td>...but never below this many ticks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-alraune"><code>[alraune]</code><a class="headerlink" href="#familiars-alraune" title="Permanent link">&para;</a></h2>
+<p>The Alraune, a Mandrake grown tame in a faerie pot, and its garden.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-alraune-contentticks"></a><code>content<wbr>Ticks</code></td>
+<td><code>72000</code> <small>(1 h)</small></td>
+<td><code>1</code> to <code>1728000</code></td>
+<td>How long one bath of milk or honey keeps an Alraune content and working, in ticks (72000 = 3 days).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-alraune-garden"><code>[alraune.garden]</code><a class="headerlink" href="#familiars-alraune-garden" title="Permanent link">&para;</a></h3>
+<p>The garden it tends about its pot, while content.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-alraune-garden-radius"></a><code>radius</code></td>
+<td><code>10</code></td>
+<td><code>1</code> to <code>32</code></td>
+<td>How far it reaches from its pot each way across (blocks): 10 is a 21 x 21 square.</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-garden-below"></a><code>below</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>8</code></td>
+<td>How far below and above its pot's floor it tends (blocks).</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-garden-above"></a><code>above</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>8</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-garden-growthmultiplier"></a><code>growth<wbr>Multiplier</code></td>
+<td><code>1.5</code></td>
+<td><code>1.0</code> to <code>10.0</code></td>
+<td>How many times as fast what grows in its garden grows (1 adds nothing to the world's own growth).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-alraune-guard"><code>[alraune.guard]</code><a class="headerlink" href="#familiars-alraune-guard" title="Permanent link">&para;</a></h3>
+<p>How it shrieks at monsters near its pot.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-alraune-guard-range"></a><code>range</code></td>
+<td><code>8.0</code></td>
+<td><code>1.0</code> to <code>32.0</code></td>
+<td>How near (blocks) a monster must be for it to shriek.</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-guard-shriekeveryticks"></a><code>shriek<wbr>Every<wbr>Ticks</code></td>
+<td><code>100</code> <small>(5 s)</small></td>
+<td><code>1</code> to <code>6000</code></td>
+<td>Ticks between its shrieks.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-alraune-slumberroot"><code>[alraune.slumberroot]</code><a class="headerlink" href="#familiars-alraune-slumberroot" title="Permanent link">&para;</a></h3>
+<p>Slumberroot, its gift, and the Slumberroot Philtre.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-alraune-slumberroot-sleepticks"></a><code>sleep<wbr>Ticks</code></td>
+<td><code>160</code> <small>(8 s)</small></td>
+<td><code>1</code> to <code>6000</code></td>
+<td>How long a creature put to sleep by Slumberroot sleeps, in ticks (a blow wakes it sooner).</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-slumberroot-philtreradius"></a><code>philtre<wbr>Radius</code></td>
+<td><code>4.0</code></td>
+<td><code>0.5</code> to <code>16.0</code></td>
+<td>How far (blocks) a thrown Slumberroot Philtre's splash reaches.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="familiars-alraune-rootfast"><code>[alraune.rootfast]</code><a class="headerlink" href="#familiars-alraune-rootfast" title="Permanent link">&para;</a></h3>
+<p>Rootfast, the Rootfast Tonic's effect.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-alraune-rootfast-rootafterticks"></a><code>root<wbr>After<wbr>Ticks</code></td>
+<td><code>20</code> <small>(1 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Ticks one under it must stand still on grass or soil to take root.</td>
+</tr>
+<tr>
+<td><a id="familiars-alraune-rootfast-healeveryticks"></a><code>heal<wbr>Every<wbr>Ticks</code></td>
+<td><code>40</code> <small>(2 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>Once rooted, it heals a half heart this often, in ticks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-buzzybees"><code>[buzzybees]</code><a class="headerlink" href="#familiars-buzzybees" title="Permanent link">&para;</a></h2>
+<p>The Buzzybees of the faerie trees' hives.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-buzzybees-stingdamage"></a><code>sting<wbr>Damage</code></td>
+<td><code>1.0</code></td>
+<td><code>0.0</code> to <code>20.0</code></td>
+<td>The damage a Buzzybee's gentle sting deals (no poison, and it lives on); 0 stings for nothing.</td>
+</tr>
+<tr>
+<td><a id="familiars-buzzybees-wildhivebeesmin"></a><code>wild<wbr>Hive<wbr>Bees<wbr>Min</code></td>
+<td><code>2</code></td>
+<td><code>0</code> to <code>3</code></td>
+<td>The fewest and most Buzzybees in a hive hung on a faerie tree as the land generates (new hives only).</td>
+</tr>
+<tr>
+<td><a id="familiars-buzzybees-wildhivebeesmax"></a><code>wild<wbr>Hive<wbr>Bees<wbr>Max</code></td>
+<td><code>3</code></td>
+<td><code>0</code> to <code>3</code></td>
+<td>See the setting above.</td>
+</tr>
+<tr>
+<td><a id="familiars-buzzybees-carrymaxticks"></a><code>carry<wbr>Max<wbr>Ticks</code></td>
+<td><code>140</code> <small>(7 s)</small></td>
+<td><code>1</code> to <code>1200</code></td>
+<td>The longest a Buzzybee carries a faerie on its back before it lets it down, in ticks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="familiars-wings"><code>[wings]</code><a class="headerlink" href="#familiars-wings" title="Permanent link">&para;</a></h2>
+<p>Faerie wings, however they are given.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Default</th>
+<th>Allowed</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a id="familiars-wings-cushionfadinglandings"></a><code>cushion<wbr>Fading<wbr>Landings</code></td>
+<td><code>true</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Wings that end in mid-air leave a puff of faerie dust that cushions the landing: no fall damage.</td>
+</tr>
+<tr>
+<td><a id="familiars-wings-colorneighborhood"></a><code>color<wbr>Neighborhood</code></td>
+<td><code>32.0</code></td>
+<td><code>0.0</code> to <code>256.0</code></td>
+<td>New wings take a color that winged players this near (blocks) wear as little as any.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../server/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Server settings: the front page">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Server settings: the front page
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../creatures/" class="md-footer__link md-footer__link--next" aria-label="Next: Creatures">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Creatures
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Faerie Hollow &copy; CozyRozy. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.copy","content.code.annotate","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","search.suggest","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+    
+  </body>
+</html>
